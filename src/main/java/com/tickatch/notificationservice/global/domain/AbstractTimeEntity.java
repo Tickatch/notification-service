@@ -1,4 +1,4 @@
-package com.tickatch.projectinterface.global.domain;
+package com.tickatch.notificationservice.global.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
