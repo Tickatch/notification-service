@@ -19,6 +19,12 @@ spring:
     compose:
       lifecycle-management: start_only  # docker 생명 주기 (none, start-only, start-and-stop)
 
+  # ===== default schema 설정 =====
+  jpa:
+    properties:
+      hibernate:
+        default_schema: notification
+
   # ===== Config Server 연동 =====
   config:
     import: optional:configserver:${CONFIG_SERVER_URL:https://www.pinjun.xyz/config}
