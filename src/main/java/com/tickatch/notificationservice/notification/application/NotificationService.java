@@ -49,7 +49,8 @@ public class NotificationService {
             request.templateCode(),
             subject,
             content,
-            request.recipient());
+            request.recipient(),
+            request.option());
 
     Notification saved = notificationRepository.save(notification);
     log.info("알림 생성 완료: notificationId={}", saved.getId());
@@ -128,6 +129,7 @@ public class NotificationService {
     return switch (channel) {
       case EMAIL -> TemplateType.EMAIL;
       case SMS -> TemplateType.SMS;
+      case MMS -> TemplateType.MMS;
       case SLACK -> TemplateType.SLACK;
     };
   }

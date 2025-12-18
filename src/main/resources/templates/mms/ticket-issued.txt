@@ -1,0 +1,12 @@
+[Tickatch] 모바일 티켓
+
+{{reserverName}}님의 {{productName}} 티켓이 발행되었습니다.
+
+공연 시작시간: {{performanceDate}}
+좌석번호: {{seatNumber}}
+
+첨부된 QR 코드를 현장에서 제시해주세요.
+
+※ 티켓번호: {{ticketId}}
+※ 신분증을 지참해주세요.
+※ QR 코드는 1회만 사용 가능합니다.
