@@ -1,0 +1,7 @@
+spring:
+  config:
+    import:
+      - 'optional:file:.env[.properties]'
+  cloud:
+    config:
+      enabled: false

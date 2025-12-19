@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예매 완료</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif; background-color: #f5f5f5;">
+<table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="margin: 0; padding: 20px; background-color: #f5f5f5;">
+  <tr>
+    <td align="center">
+      <!-- Container -->
+      <table role="presentation" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); margin: 0 auto;">
+
+        <!-- Header -->
+        <tr>
+          <td style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px 30px; text-align: center; color: white; border-radius: 12px 12px 0 0;">
+            <h1 style="margin: 0 0 10px 0; font-size: 28px; font-weight: 700; color: white;">🎉 예매가 완료되었습니다!</h1>
+            <p style="margin: 0; font-size: 16px; opacity: 0.9; color: white;">즐거운 관람 되시기 바랍니다</p>
+          </td>
+        </tr>
+
+        <!-- Content -->
+        <tr>
+          <td style="padding: 40px 30px;">
+
+            <!-- Greeting -->
+            <p style="font-size: 18px; color: #333; margin: 0 0 30px 0; line-height: 1.6;">
+              안녕하세요, <strong>{{reserverName}}</strong>님!<br>
+              <strong>{{productName}}</strong> 예매가 성공적으로 완료되었습니다.
+            </p>
+
+            <!-- Reservation Number -->
+            <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 30px;">
+              <tr>
+                <td style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                  <div style="font-size: 14px; opacity: 0.9; margin-bottom: 8px; color: white;">예매번호</div>
+                  <div style="font-size: 24px; font-weight: 700; letter-spacing: 2px; font-family: 'Courier New', monospace; color: white;">{{reservationNumber}}</div>
+                </td>
+              </tr>
+            </table>
+
+            <!-- Reservation Info -->
+            <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f8f9fa; border-radius: 8px; margin-bottom: 30px;">
+              <tr>
+                <td style="padding: 25px;">
+
+                  <!-- Info Row 1 -->
+                  <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 1px solid #e9ecef;">
+                    <tr>
+                      <td style="padding: 12px 0;">
+                        <span style="font-size: 14px; color: #6c757d; font-weight: 500;">공연명</span>
+                      </td>
+                      <td align="right" style="padding: 12px 0;">
+                        <span style="font-size: 16px; color: #212529; font-weight: 600;">{{productName}}</span>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <!-- Info Row 2 -->
+                  <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 1px solid #e9ecef;">
+                    <tr>
+                      <td style="padding: 12px 0;">
+                        <span style="font-size: 14px; color: #6c757d; font-weight: 500;">예매자</span>
+                      </td>
+                      <td align="right" style="padding: 12px 0;">
+                        <span style="font-size: 16px; color: #212529; font-weight: 600;">{{reserverName}}</span>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <!-- Info Row 3 -->
+                  <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 1px solid #e9ecef;">
+                    <tr>
+                      <td style="padding: 12px 0;">
+                        <span style="font-size: 14px; color: #6c757d; font-weight: 500;">공연 시작일시</span>
+                      </td>
+                      <td align="right" style="padding: 12px 0;">
+                        <span style="font-size: 16px; color: #212529; font-weight: 600;">{{performanceDate}}</span>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <!-- Info Row 4 -->
+                  <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td style="padding: 12px 0;">
+                        <span style="font-size: 14px; color: #6c757d; font-weight: 500;">공연장</span>
+                      </td>
+                      <td align="right" style="padding: 12px 0;">
+                        <span style="font-size: 16px; color: #212529; font-weight: 600;">{{artHallName}} {{stageName}}</span>
+                      </td>
+                    </tr>
+                  </table>
+
+                </td>
+              </tr>
+            </table>
+
+            <!-- Seats -->
+            <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 30px;">
+              <tr>
+                <td style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; border-radius: 8px;">
+                  <div style="font-size: 14px; color: #856404; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                    <span style="display: inline-block;">예매 좌석</span>
+                    <span style="display: inline-block; background-color: #ffc107; color: #212529; padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: 600; margin: 5px;">{{seatNumber}}</span>
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+            <!-- Divider -->
+            <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0;">
+              <tr>
+                <td style="height: 1px; background-color: #e9ecef;"></td>
+              </tr>
+            </table>
+
+            <!-- Notice -->
+            <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 30px;">
+              <tr>
+                <td style="background-color: #e7f3ff; border-left: 4px solid #2196F3; padding: 20px; border-radius: 8px;">
+                  <div style="font-size: 16px; font-weight: 600; color: #0d47a1; margin-bottom: 12px;">📌 예매 안내사항</div>
+                  <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td style="font-size: 14px; color: #424242; padding: 6px 0;">• 예매번호는 티켓 발권 시 필요하니 반드시 보관해주세요.</td>
+                    </tr>
+                    <tr>
+                      <td style="font-size: 14px; color: #424242; padding: 6px 0;">• 공연 시작 30분 전까지 티켓을 발권해주세요.</td>
+                    </tr>
+                    <tr>
+                      <td style="font-size: 14px; color: #424242; padding: 6px 0;">• 취소 및 환불은 공연 3일 전까지 가능합니다.</td>
+                    </tr>
+                    <tr>
+                      <td style="font-size: 14px; color: #424242; padding: 6px 0;">• 공연 당일 신분증을 지참해주세요.</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+            <!-- Button -->
+            <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0;">
+              <tr>
+                <td align="center">
+                  <a href="https://tickatch.xyz/mypage/reservations" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-size: 16px; font-weight: 600;">
+                    예매 상세 보기
+                  </a>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td style="background-color: #f8f9fa; padding: 30px; text-align: center; border-top: 1px solid #e9ecef; border-radius: 0 0 12px 12px;">
+            <p style="font-size: 13px; color: #6c757d; line-height: 1.8; margin: 0;">
+              본 메일은 발신 전용입니다.<br>
+              문의사항은 <a href="mailto:support@tickatch.com" style="color: #667eea; text-decoration: none;">support@tickatch.com</a>으로 연락주세요.<br>
+              <br>
+              © 2025 Tickatch. All rights reserved.
+            </p>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
