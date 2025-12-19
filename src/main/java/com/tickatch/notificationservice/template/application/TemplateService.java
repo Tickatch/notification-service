@@ -78,7 +78,7 @@ public class TemplateService {
 
     return switch (type) {
       case EMAIL -> fileName + ".html";
-      case SMS, MMS -> fileName + ".txt";
+      case SMS -> fileName + ".txt";
       case SLACK -> fileName + ".json";
     };
   }

@@ -1,1 +1,0 @@
-[Tickatch] {{productName}} 티켓이 발행되었습니다

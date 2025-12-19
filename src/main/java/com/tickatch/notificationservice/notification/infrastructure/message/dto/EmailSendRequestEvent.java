@@ -21,43 +21,47 @@ public class EmailSendRequestEvent extends DomainEvent {
 
   private final String content;
 
-  private final boolean html;
+  private final boolean isHtml;
 
   public EmailSendRequestEvent(
-      Long notificationId, String email, String subject, String content, boolean html) {
+      Long notificationId, String email, String subject, String content, boolean isHtml) {
     super();
     this.notificationId = notificationId;
     this.email = email;
     this.subject = subject;
     this.content = content;
-    this.html = html;
+    this.isHtml = isHtml;
   }
 
-  public static EmailSendRequestEvent from(Notification notification, boolean html) {
+  public static EmailSendRequestEvent from(Notification notification, boolean isHtml) {
     return new EmailSendRequestEvent(
         notification.getId(),
         notification.getRecipient(),
         notification.getSubject(),
         notification.getContent(),
-        html);
+        isHtml);
   }
 
   @JsonCreator
   public EmailSendRequestEvent(
+      @JsonProperty("notificationId") Long notificationId,
       @JsonProperty("eventId") String eventId,
       @JsonProperty("occurredAt") Instant occurredAt,
       @JsonProperty("version") int version,
-      @JsonProperty("notificationId") Long notificationId,
       @JsonProperty("email") String email,
       @JsonProperty("subject") String subject,
       @JsonProperty("content") String content,
-      @JsonProperty("html") boolean html) {
+      @JsonProperty("isHtml") boolean isHtml) {
     super(eventId, occurredAt, version);
     this.notificationId = notificationId;
     this.email = email;
     this.subject = subject;
     this.content = content;
-    this.html = html;
+    this.isHtml = isHtml;
+  }
+
+  public boolean getIsHtml() {
+    return this.isHtml;
   }
 
   @Override

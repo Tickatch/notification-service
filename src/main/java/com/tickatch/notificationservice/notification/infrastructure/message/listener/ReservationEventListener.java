@@ -21,12 +21,11 @@ public class ReservationEventListener {
 
   private final NotificationService notificationService;
 
-  private static final String EVENT_TYPE = "RESERVATION_COMPLETED";
   private static final String TEMPLATE_CODE = "RESERVATION_SUCCESS";
   private static final DateTimeFormatter DATE_FORMATTER =
       DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 HH:mm");
 
-  @RabbitListener(queues = RabbitMQConfig.QUEUE_RESERVATION_COMPLETED)
+  @RabbitListener(queues = RabbitMQConfig.QUEUE_RESERVATION_COMPLETED_RESERVATION)
   public void handleReservationCompleted(IntegrationEvent event) {
     EventContext.run(event, this::sendReservationCompletedEmail);
   }
@@ -53,12 +52,11 @@ public class ReservationEventListener {
     NotificationRequest request =
         new NotificationRequest(
             event.getReserverId(),
-            EVENT_TYPE,
+            "RESERVATION_COMPLETED",
             NotificationChannel.EMAIL,
             TEMPLATE_CODE,
             event.getReserverEmail(),
-            buildTemplateVariables(event),
-            null);
+            buildTemplateVariables(event));
 
     notificationService.sendNotification(request);
   }
