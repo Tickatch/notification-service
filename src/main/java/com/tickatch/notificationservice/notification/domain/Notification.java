@@ -51,6 +51,9 @@ public class Notification extends AbstractTimeEntity {
 
   private Integer retryCount = 0;
 
+  @Column(columnDefinition = "TEXT")
+  private String option;
+
   public static Notification create(
       UUID userId,
       String eventType,
@@ -58,7 +61,8 @@ public class Notification extends AbstractTimeEntity {
       String templateCode,
       String subject,
       String content,
-      String recipient) {
+      String recipient,
+      String option) {
     Notification notification = new Notification();
 
     notification.userId = userId;
@@ -69,6 +73,7 @@ public class Notification extends AbstractTimeEntity {
     notification.content = content;
     notification.recipient = recipient;
     notification.status = NotificationStatus.PENDING;
+    notification.option = option;
 
     return notification;
   }

@@ -12,7 +12,8 @@ public record NotificationRequest(
     @NotNull(message = "채널은 필수입니다.") NotificationChannel channel,
     @NotBlank(message = "템플릿 코드는 필수입니다.") String templateCode,
     @NotBlank(message = "수신자 정보는 필수입니다.") String recipient,
-    @NotNull(message = "템플릿 변수는 필수입니다.") Map<String, Object> templateVariables) {
+    @NotNull(message = "템플릿 변수는 필수입니다.") Map<String, Object> templateVariables,
+    String option) {
   public NotificationRequest {
     templateVariables = Map.copyOf(templateVariables);
   }
