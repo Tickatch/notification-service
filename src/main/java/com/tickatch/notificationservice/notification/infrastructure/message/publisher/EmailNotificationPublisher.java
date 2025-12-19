@@ -36,16 +36,6 @@ public class EmailNotificationPublisher implements NotificationPublisher {
   }
 
   @Override
-  public void publishRetry(Notification notification) {
-    log.info(
-        "이메일 재발송 이벤트 발행: notificationId={}, retryCount={}",
-        notification.getId(),
-        notification.getRetryCount());
-
-    publish(notification);
-  }
-
-  @Override
   public boolean supports(NotificationChannel channel) {
     return channel == NotificationChannel.EMAIL;
   }
