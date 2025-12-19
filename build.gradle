@@ -70,6 +70,7 @@ dependencies {
     implementation 'org.postgresql:postgresql'
 
     implementation 'io.github.tickatch:common-lib:0.0.5'
+    implementation 'com.github.spullara.mustache.java:compiler:0.9.14'
 
     // lombok
     compileOnly 'org.projectlombok:lombok'
